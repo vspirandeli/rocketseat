@@ -3,7 +3,23 @@ import { Comment } from './Comment';
 
 import styles from './Post.module.css';
 
-export function Post() {
+// TODO: Melhorar o post vazio
+export function Post(props) {
+  // eslint-disable-next-line react/prop-types
+  if (!props?.author) {
+    return emptyPost();
+  }
+
+  function emptyPost() {
+    return (
+      <article className={styles.post}>
+        <div className={styles.content}>
+          <p>Ainda não existem posts</p>
+        </div>
+      </article>
+    )
+  }
+
   return (
     <article className={styles.post}>
       <header>

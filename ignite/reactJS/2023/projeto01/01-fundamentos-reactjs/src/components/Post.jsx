@@ -11,7 +11,11 @@ import { useState } from 'react';
 
 // TODO: Melhorar o post vazio
 export function Post({ author, publishedAt, content }) {
-  const [comments, setComments] = useState([1, 2]);
+  const [comments, setComments] = useState([
+    'Post muito bom!',
+  ]);
+
+  const [newCommentText, setNewCommentText] = useState('');
 
   if (!author) {
     return emptyPost();
@@ -39,7 +43,13 @@ export function Post({ author, publishedAt, content }) {
   function handleCreateNewComment() {
     event.preventDefault();
 
-    setComments([...comments, comments.length + 1])
+    setComments([...comments, newCommentText]);
+    setNewCommentText('');
+  }
+
+  function handleNewCommentChange() {
+    const value = event.target.value;
+    setNewCommentText(value);
   }
 
   return (
@@ -71,7 +81,11 @@ export function Post({ author, publishedAt, content }) {
         <strong>Deixe seu feedback</strong>
 
         <textarea
+          name="comment"
+          id="comment"
           placeholder="Deixe um comentário"
+          onChange={handleNewCommentChange}
+          value={newCommentText}
         />
 
         <footer>
@@ -81,7 +95,7 @@ export function Post({ author, publishedAt, content }) {
 
       <div className={styles.commentList}>
         {comments.map(comment => (
-          <Comment key={comment} />
+          <Comment key={comment} content={comment} />
         ))}
       </div>
     </article>

@@ -2,11 +2,18 @@ import { ThumbsUp, Trash } from 'phosphor-react';
 
 import styles from './Comment.module.css';
 import { Avatar } from './Avatar';
+import { useState } from 'react';
 
 // eslint-disable-next-line react/prop-types
 export function Comment({ content, onDeleteComment  }) {
+  const [likeCount, setLikeCount] = useState(0);
+
   function handleDeleteComment() {
     onDeleteComment(content);
+  }
+
+  function handleLikeCount() {
+    setLikeCount(likeCount + 1);
   }
   
   return (
@@ -31,9 +38,9 @@ export function Comment({ content, onDeleteComment  }) {
         </div>
 
         <footer>
-          <button>
+          <button onClick={handleLikeCount} title="Aplaudir">
             <ThumbsUp size={20} />
-            Aplaudir <span>20</span>
+            Aplaudir <span>{likeCount}</span>
           </button>
         </footer>
       </div>

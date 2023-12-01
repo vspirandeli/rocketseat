@@ -12,8 +12,11 @@ export function Comment({ content, onDeleteComment  }) {
     onDeleteComment(content);
   }
 
+  // XXX: Sempre que for atualizar um state utilizando seu valor atual. Utilizar nesse formato, para sempre obter o último valor do state.
   function handleLikeCount() {
-    setLikeCount(likeCount + 1);
+    setLikeCount((state) => {
+      return state + 1;
+    });
   }
   
   return (

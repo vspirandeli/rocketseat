@@ -6,7 +6,26 @@ import './global.css';
 import styles from './App.module.css';
 
 // TODO: Criar um jsonserver para simular uma API
-const posts = [
+
+interface Author {
+  name: string;
+  role: string;
+  avatarUrl: string;
+}
+
+interface Content {
+  type: 'paragraph' | 'link';
+  content: string;
+}
+
+interface PostType {
+  id: number;
+  author: Author;
+  publishedAt: Date;
+  content: Content[];
+}
+
+const posts: PostType[] = [
   { 
     id: 1, 
     author: { 

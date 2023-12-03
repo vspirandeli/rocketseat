@@ -1,0 +1,18 @@
+.ammountContainer {
+  width: 1.5625rem;
+  height: 1.25rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--gray-400);
+  color: var(--gray-200);
+
+  border-radius: 100%;
+
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}

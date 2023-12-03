@@ -1,0 +1,21 @@
+.header {
+  width: 100%;
+  height: 12.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: var(--gray-700);
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.todoImage {
+  align-self: flex-start;
+
+  margin-left: 0.75rem;
+}

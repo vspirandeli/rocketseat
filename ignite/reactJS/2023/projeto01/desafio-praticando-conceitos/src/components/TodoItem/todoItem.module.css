@@ -1,0 +1,95 @@
+.itemContainer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  padding: 1rem;
+
+  background-color: var(--gray-500);
+
+  border-radius: 8px;
+}
+
+.itemContainer + .itemContainer {
+  margin-top: 0.75rem;
+
+}
+
+.itemContainer > label > input[type='checkbox'] {
+  display: none;
+}
+
+.itemContainer > label {
+  content: '';
+  width: 1.125rem;
+  height: 1.05rem;
+
+  margin-right: 0.75rem;
+
+  border: 1px solid var(--blue);
+  border-radius: 100%;
+
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.itemContainer > label:hover {
+  border: 1px solid var(--blue-dark);
+  background-color: var(--gray-400);
+}
+
+.itemContainer .checkboxChecked {
+  background-color: var(--purple-dark);
+  border: none;
+  
+  text-align: center;
+}
+
+.itemContainer .checkboxChecked:hover {
+  background-color: var(--purple);
+  border: none;
+}
+
+.icon {
+  color: var(--gray-100);
+}
+
+.todoContent > span {
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+
+  color: var(--gray-100);
+}
+
+.todoContent > .contentChecked {
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.deleteButton {
+  margin-left: 0.75rem;
+  padding: 0.3125rem 0.375rem;
+
+  border: none;
+  background-color: transparent;
+  color: var(--gray-300);
+
+  cursor: pointer;
+}
+
+.deleteButton:not(:disabled):hover {
+  background-color: var(--gray-400);
+
+  border-radius: 4px;
+  color: var(--danger);
+}
+
+.deleteButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

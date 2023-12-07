@@ -1,9 +1,13 @@
 import styles from './ammountCounter.module.css';
 
-export function AmmountCounter() {
+interface Props {
+  ammount: string;
+}
+
+export function AmmountCounter({ ammount }: Props) {
   return (
     <div className={styles.ammountContainer}>
-      <span>0</span>
+      <span>{ammount}</span>
     </div>
   )
 }
